@@ -24,3 +24,6 @@ yarn.lock
 # test
 coverage
 .npmignore
+
+/examples/.wepycache
+/examples/.wepyignore
