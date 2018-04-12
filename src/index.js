@@ -187,4 +187,4 @@ globalObject._dispatcher = wepyx.dispatcher;
 
 export default wepyx;
 
-export { connect, _clean, prefix };
+export { connect, _clean };

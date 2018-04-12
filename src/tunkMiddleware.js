@@ -1,5 +1,3 @@
-import { prefix } from './index';
-
 const thunkMiddleware = ({ dispatch, getState }) => next => action => {
   if (action.meta && action.payload && typeof action.payload === 'function') {
     const { namespace, composeDispatcher, takes } = action.meta;
