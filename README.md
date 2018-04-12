@@ -175,7 +175,7 @@ eventBus
 `eventBus.take(type) => chained(Promise)`: 监听一次事件，事件发生之后监听会被自动移除
 
 
-model examples
+# Model Examples
 ```js
 wepyx.model({
   namespace: 'n1',
@@ -192,10 +192,11 @@ wepyx.model({
   },
   actions: {
     asyncSub(params) {
-      return async function({ eventBus, dispatcher, oldState, getState }) {
+      return async function({ dispatcher, take, state, getState }) {
         const data = await new Promise(resolve => {
           setTimeout(() => resolve(1), 3000);
         });
+        const data2 = await take('other/getDataDone')
         // 内部注入的 dispatcher 派发当前 namespace 的 actions 时候不需要前缀
         dispatcher.sub(data); 
         return true;
